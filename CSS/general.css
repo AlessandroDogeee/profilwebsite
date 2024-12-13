@@ -1,0 +1,96 @@
+:root {
+    --text-color: rgb(255, 255, 255);
+    --background-color: rgb(0, 0, 0);
+    --link-color: #FF52FF;
+}
+
+body {
+    font-family: "kollektif", sans-serif;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    overflow: hidden;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.circle {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 1;
+    font-size: clamp(2em, 2.5em + 1vw, 4em);
+    text-align: center;
+    color: var(--text-color);
+}
+
+p {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    font-size: clamp(0.5em, 1em + 1vw, 1.6em);
+    color: var(--text-color);
+}
+
+.centered {
+    text-align: center;
+}
+
+span {
+    height: 2px;
+    width: 200px;
+    background-color: var(--text-color);
+    display: inline-block;
+    margin-bottom: 0.5%;
+}
+
+a:hover {
+    opacity: 0.8;
+    font-size: 120%;
+}
+
+img,
+embed,
+iframe,
+a {
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.spacing {
+    margin-bottom: 13vw;
+    z-index: 9999;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}

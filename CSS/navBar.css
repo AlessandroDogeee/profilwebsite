@@ -1,0 +1,115 @@
+navbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 2.5px solid #ffffff69;
+  background-color: var(--background-color);
+}
+
+#Logo {
+  height: 8vh;
+  width: auto;
+  margin-left: 25px;
+}
+
+#Logo:hover {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
+
+navbar ul {
+  list-style-type: none;
+  background-color: var(--background-color);
+  font-family: "kollektif", sans-serif;
+  width: 100%;
+}
+
+navbar li {
+  float: right;
+  font-size: 1.5em;
+  position: relative;
+}
+
+navbar li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  padding-right: 25px;
+}
+
+li::after {
+  content: "";
+  height: 5%;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 5%;
+  opacity: 0;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+#open::after {
+  content: "";
+  height: 5%;
+  width: 80%;
+  background: var(--text-color);
+  display: block;
+  position: absolute;
+  left: 5%;
+  opacity: 1;
+}
+
+li:hover::after {
+  opacity: 1;
+}
+
+@keyframes appear {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 75%;
+  }
+}
+
+#menuToggle {
+  display: none;
+}
+
+#navlist,
+label {
+  transform: scale(0.6);
+  width: auto;
+  height: 9vh;
+  display: none;
+  margin-left: auto;
+}
+
+label {
+  display: block;
+}
+
+/* Responsive Dropdown Liste */
+@media (max-width: 820px) {
+  navbar ul {
+    display: none;
+  }
+
+  #navlist {
+    display: block;
+  }
+
+  #menuToggle:checked+label+ul {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    right: 0;
+    top: 10vh;
+    width: 27.5vh;
+    z-index: 9999;
+  }
+}
+

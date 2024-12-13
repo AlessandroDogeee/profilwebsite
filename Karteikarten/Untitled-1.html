@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #70c5ce; }
+        canvas { display: block; margin: 0 auto; background-color: #70c5ce; }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = 800;
+        canvas.height = 600;
+
+        const bird = {
+            x: 100,
+            y: canvas.height / 2,
+            width: 40,
+            height: 40,
+            speed: 2,
+            gravity: 0.4,
+            lift: -10,
+            velocity: 0
+        };
+
+        const pipes = [];
+        const pipeWidth = 60;
+        const gapHeight = 150;
+        const pipeFrequency = 90; // Every X frames a new pipe appears
+        let frameCount = 0;
+        let gameOver = false;
+
+        function drawBird() {
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(bird.x, bird.y, bird.width, bird.height);
+        }
+
+        function createPipes() {
+            if (frameCount % pipeFrequency === 0) {
+                const pipeHeight = Math.floor(Math.random() * (canvas.height - gapHeight));
+                pipes.push({ x: canvas.width, top: pipeHeight, bottom: pipeHeight + gapHeight });
+            }
+        }
+
+        function drawPipes() {
+            ctx.fillStyle = 'green';
+            for (let i = 0; i < pipes.length; i++) {
+                const pipe = pipes[i];
+                ctx.fillRect(pipe.x, 0, pipeWidth, pipe.top); // Top pipe
+                ctx.fillRect(pipe.x, pipe.bottom, pipeWidth, canvas.height - pipe.bottom); // Bottom pipe
+            }
+        }
+
+        function movePipes() {
+            for (let i = 0; i < pipes.length; i++) {
+                pipes[i].x -= 3;
+            }
+
+            // Remove pipes that have gone off-screen
+            if (pipes.length && pipes[0].x + pipeWidth < 0) {
+                pipes.shift();
+            }
+        }
+
+        function checkCollisions() {
+            // Check if bird hits the ground
+            if (bird.y + bird.height > canvas.height) {
+                gameOver = true;
+            }
+
+            // Check if bird hits a pipe
+            for (let i = 0; i < pipes.length; i++) {
+                const pipe = pipes[i];
+                if (bird.x + bird.width > pipe.x && bird.x < pipe.x + pipeWidth) {
+                    if (bird.y < pipe.top || bird.y + bird.height > pipe.bottom) {
+                        gameOver = true;
+                    }
+                }
+            }
+        }
+
+        function updateBird() {
+            bird.velocity += bird.gravity;
+            bird.y += bird.velocity;
+            if (bird.y < 0) bird.y = 0; // Prevent the bird from going off the top
+        }
+
+        function handleKeyPress(e) {
+            if (e.keyCode === 32 && !gameOver) { // Space bar to make the bird flap
+                bird.velocity = bird.lift;
+            }
+
+            if (e.keyCode === 32 && gameOver) { // Restart the game
+                resetGame();
+            }
+        }
+
+        function resetGame() {
+            pipes.length = 0; // Clear pipes
+            bird.y = canvas.height / 2;
+            bird.velocity = 0;
+            gameOver = false;
+            frameCount = 0;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (!gameOver) {
+                createPipes();
+                movePipes();
+                checkCollisions();
+                updateBird();
+                drawPipes();
+                drawBird();
+            } else {
+                ctx.fillStyle = 'black';
+                ctx.font = '30px Arial';
+                ctx.fillText('Game Over! Press Space to Restart', 150, canvas.height / 2);
+            }
+
+            frameCount++;
+            requestAnimationFrame(draw); // Loop the game
+        }
+
+        // Listen to keypress event
+        window.addEventListener('keydown', handleKeyPress);
+
+        draw(); // Start the game
+    </script>
+</body>
+</html>

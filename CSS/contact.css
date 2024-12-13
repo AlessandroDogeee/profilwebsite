@@ -1,0 +1,22 @@
+div {
+    text-align: center;
+}
+
+.above p {
+    font-size: 120%;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 450px;
+}
+
+.above h2 {
+    font-size: 200%;
+}
+
+a {
+    color: var(--link-color);
+}

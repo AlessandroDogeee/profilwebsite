@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage - Alessandro Linigers Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="/favicon_io/favicon-32x32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/kollektif" rel="stylesheet" />
+
+  <link href="/CSS/index.css" rel="stylesheet"/>
+  <link href="/CSS/general.css" rel="stylesheet"/>
+  <link href="/CSS/navBar.css" rel="stylesheet"/>
+  <link href="/CSS/footer.css" rel="stylesheet"/>
+
+  
+
+</head>
+
+<body>
+
+  <navbar>
+    <img onclick="location.href='/Index.html'" src="/Bilder/AL_Logo.png" draggable="false" id="Logo" alt="Logo Website" />
+    <input type="checkbox" id="menuToggle">
+    <label for="menuToggle">
+      <img src="/Bilder/navlist.png" draggable="false" id="navlist" alt="navlist">
+    </label>
+    <ul>
+      <li><a href="/HTML/contact.html">Kontakte</a></li>
+      <li><a href="/HTML/project.html">Projekte</a></li>
+      <li><a href="/HTML/skills.html">Fähigkeiten</a></li>
+      <li><a href="/HTML/aboutme.html">Über mich</a></li>
+      <li id="open"><a href="/index.html">Home</a></li>
+    </ul>
+  </navbar>
+
+  <main class="centered">
+
+    <section class="above">
+      <h1>Willkommen auf meiner Website!</h1>
+      <introduction>
+        <p>
+          Ich bin frisch aus der Oberstufe und hochmotiviert, meine Karriere bei Swisscom begonnen zu haben. Während
+          meiner kommenden vier Jahre hier möchte ich viel erreichen und ein Netzwerk von Kontakten aufbauen.
+        </p>
+
+        <p>
+          Ich bin sehr dankbar für dein Interesse an meiner Website!
+        </p>
+
+        <p>
+          Klicke auf die Bilder unten, um mehr über mich zu erfahren
+        </p>
+      </introduction>
+      <!--Divider-->
+      <span></span>
+
+      <photonavigation>
+        <img onclick="location.href='/HTML/aboutme.html'" class="aboutme" src="/Bilder/Profilbild.png"
+          alt="Alessandro Liniger Potrait" draggable="false" />
+
+        <img onclick="location.href='/HTML/skills.html'" class="skills" src="/Bilder/FaehigkeitenPC.png"
+          alt="Grafikkarte wird eingeschraubt" draggable="false" />
+
+        <img onclick="location.href='/HTML/project.html'" class="projects" src="/Bilder/ProjektFirstSteps.JPG"
+          alt="Projekt First Steps bei Swisscom" draggable="false" />
+      </photonavigation>
+    </section>
+
+    <div class="spacing"></div>
+
+    <section class="above">
+      <p>Anhang: <br> <a href="https://www.canva.com/design/DAGNVvhm4DU/9F9LLyaKhDDb8kjIIZOhLA/edit?utm_content=DAGNVvhm4DU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Link
+          zu Lebenslauf</a>
+      </p>
+      <sub>Fahre mit der Maus unter meine Referenzen im Lebenslauf, um die Option für die Vollbildansicht anzuzeigen.</sub>
+      <pdf>
+        <iframe loading="lazy" src="https://www.canva.com/design/DAGNVvhm4DU/qIbC7Geis4djvw_T8qkcsw/view?embed"
+          allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+      </pdf>
+    </section>
+  </main>
+
+  <footer>
+    <p>Alessandro Liniger</p>
+  </footer>
+</body>
+
+</html>

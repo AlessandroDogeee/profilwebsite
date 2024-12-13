@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#karteiKartenSet {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.karteikarte {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.2s ease-in-out;
+}
+
+.karteikarte:hover {
+    transform: scale(1.05); 
+}
+
+.karteikarte p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button.solution {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button.solution:hover {
+    background-color: #388e3c;
+}
+
+span {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#seperator {
+    margin: 0 10px; 
+    font-size: 1.5em; 
+    color: #555; 
+}
+
+#points, #maxPoints {
+    margin: 0 5px;
+}
+
+button.delete {
+    background-color: #e74c3c;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+button.delete:hover {
+    background-color: #c0392b;
+}
+

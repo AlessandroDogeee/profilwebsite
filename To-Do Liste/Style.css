@@ -1,0 +1,111 @@
+/* Allgemeines Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Überschrift */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container Styling */
+container {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input- und Button Styling */
+#toDoInput {
+    width: calc(100% - 100px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#addButton,
+#removeButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#addButton:hover,
+#removeButton:hover {
+    background-color: #0056b3;
+}
+
+#addButton:active,
+#removeButton:active {
+    background-color: #004085;
+}
+
+/* To-Do Liste Styling */
+#toDoList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Einzelne Aufgaben (Tasks) */
+.taskcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+.taskcontainer:hover {
+    background-color: #f1f1f1;
+}
+
+li {
+    font-size: 16px;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Einzelne Buttons für Aufgaben */
+.removeCurrentButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.removeCurrentButton:hover {
+    background-color: #c82333;
+}
+
+.removeCurrentButton:active {
+    background-color: #bd2130;
+}

@@ -1,0 +1,90 @@
+introduction {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    min-width: 1px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+introduction p:nth-child(1) {
+    font-size: 150%;
+}
+
+introduction p:nth-child(2) {
+    font-size: 125%;
+}
+
+introduction p:nth-last-child(1) {
+    font-size: 110%;
+}
+
+photonavigation {
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+photonavigation img {
+    margin: 0 20px;
+}
+
+[alt="Projekt First Steps bei Swisscom"] {
+    width: 26.8%;
+    height: 20%;
+}
+
+[alt="Alessandro Liniger Potrait"] {
+    width: 25%;
+}
+
+[alt="Grafikkarte wird eingeschraubt"] {
+    width: 17.12%;
+    height: 20%;
+}
+
+.aboutme:hover,
+.skills:hover,
+.projects:hover {
+    opacity: 0.5;
+    transform: scale(1.02);
+}
+
+p a {
+    color: var(--link-color);
+    font-size: 80%;
+}
+
+p a:hover {
+    font-size: 100%;
+}
+
+pdf {
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    position: relative;
+    width: 45vw;
+    height: 80vh;
+}
+
+sub {
+    color: var(--text-color);
+    font-size: clamp(0.3em, 0.5em + 1vw, 1em);
+}
+
+@media (max-width: 768px) {
+    iframe {
+        width: 50vw;
+        height: 50vh;
+        position: relative;
+    }
+
+    pdf {
+        margin-bottom: 20%;
+    }
+}
