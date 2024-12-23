@@ -44,7 +44,7 @@ addCard.addEventListener('click', () => {
     karteikarteSet.appendChild(karteiKarteContainer);
 
     cardcounter++;
-    maxPoints.textContent = `Max Points: ${cardcounter}`; 
+    maxPoints.textContent = `Max Punkte: ${cardcounter}`; 
 
 
     deleteCard.addEventListener('click', () => {
@@ -52,7 +52,7 @@ addCard.addEventListener('click', () => {
         localStorage.removeItem(begriffID);
         localStorage.removeItem(loesungID);
         cardcounter--;
-        maxPoints.textContent = `Max Points: ${cardcounter}`;
+        maxPoints.textContent = `Max Punkte: ${cardcounter}`;
     })
 
 
@@ -75,7 +75,7 @@ deleteAllCards.addEventListener('click', () => {
     cardcounter = 0;
     karteikarteSet.innerHTML = null;
     localStorage.clear();
-    maxPoints.textContent = `Max Karten: 0`;
+    maxPoints.textContent = `Max Punkte: 0`;
     points.textContent = `Erreichte Punkte: 0`;
 })
 

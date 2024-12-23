@@ -14,7 +14,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 // Fade-Out
 document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function(event) {
         event.preventDefault(); 
 
         document.body.classList.add('fade-out');

@@ -11,7 +11,6 @@
 .slider {
     position: absolute;
     inset: 80px 200px 80px 80px;
-    background-color: #ccc;
     border-radius: 20px;
 }
 
@@ -36,10 +35,10 @@
 .slider .slides:nth-child(2) {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 20vw;
+    left: 50%;
+    width: 80vw;
     height: 100%;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     background-size: cover;
 }
 
@@ -112,38 +111,19 @@
     transition-delay: 0.5s;
 }
 
-@media (max-width: 900px) {
-    .slider {
-        position: relative;
-        inset: 40px 40px 200px 40px;
-    }
-
-    .slider .slides {
-        width: 100px;
-        height: 100px;
-        top: initial;
-        bottom: -170px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    }
-
+@media (min-width: 1024px) {
     .slider .slides:nth-child(1),
     .slider .slides:nth-child(2) {
-        top: initial;
-        bottom: 0px;
-    }
-
-    .slider .slides:nth-child(3) {
+        position: absolute;
+        top: 0;
         left: 0;
-    }
-
-    .slider .slides:nth-child(4) {
-        left: 120px;
-    }
-
-    .slider .slides:nth-child(5) {
-        left: 120px;
+        width: 20vw;
+        height: 100%;
+        transform: translateY(0);
+        background-size: cover;
     }
 }
+
 
 article {
     max-width: 680px;

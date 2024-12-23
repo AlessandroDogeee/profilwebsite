@@ -8,6 +8,7 @@ body {
     font-family: "kollektif", sans-serif;
     background-color: var(--background-color);
     box-sizing: border-box;
+    cursor: none;
 }
 
 main {
@@ -17,6 +18,10 @@ main {
     filter: blur(0);
     transform: translateX(0);
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .cursor {
@@ -74,6 +79,7 @@ span {
 a:hover {
     opacity: 0.8;
     font-size: 120%;
+    cursor: none;
 }
 
 img,
@@ -89,8 +95,77 @@ a {
     z-index: 9999;
 }
 
+.above {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1.25s;
+}
+
+.showAbove {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.fade-out {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-80%);
+    transition: all 1s;
+}
+
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
+    }
+}
+
+@media (max-width: 1536px) {
+
+    main,
+    .aboutme {
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    main,
+    .aboutme {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    main,
+    .aboutme {
+        max-width: 768px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    main,
+    .aboutme {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    main,
+    .aboutme {
+        max-width: 475px;
+    }
+}
+
+@media (max-width: 475px) {
+
+    main,
+    .aboutme {
+        max-width: 100%;
     }
 }
